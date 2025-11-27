@@ -60,7 +60,6 @@ By design, the API restricts updates so that:
 * **Only age can be modified**
 * Attempts to update name/email return an error
 
-This is enforced inside the PUT route:
 
 ---
 
