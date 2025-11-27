@@ -27,19 +27,7 @@ This project demonstrates:
 
 ---
 
-# 🚀 **Features Implemented**
-
-### ✔ **1. REST API Using Python (Flask)**
-
-The API is fully REST-compliant:
-
-* Uses proper HTTP verbs (GET, POST, PUT, DELETE)
-* Proper status codes
-* JSON-based communication
-
----
-
-### ✔ **2. CRUD Operations**
+### ✔ **CRUD Operations**
 
 The following operations are supported:
 
@@ -53,80 +41,6 @@ The following operations are supported:
 
 ---
 
-### ✔ **3. Update Only Age (Business Constraint)**
-
-By design, the API restricts updates so that:
-
-* **Only age can be modified**
-* Attempts to update name/email return an error
-
-
----
-
-### ✔ **4. SQLite Database**
-
-The project uses SQLite for simplicity.
-SQLAlchemy creates `students.db` automatically.
-
-Config:
-
-```python
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.db'
-```
-
----
-
-### ✔ **5. OOPS Principles**
-
-The project applies OOPS through:
-
-* **Student Model class** inside `db.py`
-* Encapsulation of fields
-* ORM (SQLAlchemy) provides an object-based abstraction over database operations
-
-Model example:
-
-```python
-class Student(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(200), nullable=False)
-    age = db.Column(db.Integer, nullable=False)
-    email = db.Column(db.String(200), unique=True, nullable=False)
-```
-
----
-
-### ✔ **6. REST Principles (RMM Level 2)**
-
-The API adheres to Level 2 of the **Richardson Maturity Model**:
-
-#### **Level 0:** Request-response
-
-#### **Level 1:** Resources
-
-* `/students`
-* `/students/<id>`
-
-#### **Level 2:** HTTP Methods + Status Codes
-
-* GET, POST, PUT, DELETE
-* 200, 201, 404, 400
-
----
-
-### ✔ **7. Standardized Response Wrapper (Important Requirement)**
-
-Every response follows a single consistent structure:
-
-```python
-def response_wrapper(success: bool, message: str, data=None):
-    return {
-        "success": success,
-        "message": message,
-        "data": data
-    }
-}
-```
 
 # 📡 **API Endpoints**
 
